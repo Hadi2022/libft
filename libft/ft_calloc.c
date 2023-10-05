@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:40:59 by aortigos          #+#    #+#             */
-/*   Updated: 2023/10/04 20:20:28 by aortigos         ###   ########.fr       */
+/*   Created: 2023/09/24 15:16:49 by aortigos          #+#    #+#             */
+/*   Updated: 2023/09/24 15:18:05 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 'a' && c <= 'z')
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (!(ptr))
 	{
-		return (c - 32);
+		return (NULL);
 	}
-	return (c);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

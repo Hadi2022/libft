@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 16:40:59 by aortigos          #+#    #+#             */
-/*   Updated: 2023/10/04 20:20:28 by aortigos         ###   ########.fr       */
+/*   Created: 2023/10/04 20:21:56 by aortigos          #+#    #+#             */
+/*   Updated: 2023/10/05 19:54:54 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (c >= 'a' && c <= 'z')
+	size_t	len;
+	char	*x;
+
+	if (!s1 || !set)
+		return (NULL);
+	while (ft_strchr(set, *s1) && *s1 != '\0')
 	{
-		return (c - 32);
+		s1++;
 	}
-	return (c);
+	if (*s1 == '\0')
+	{
+		return (ft_strdup(""));
+	}
+	len = ft_srtlen(s1);
+	while (ft_strchr(set, s1[len]))
+	{
+		len--;
+	}
+	x = ft_substr(s1, 0, len + 1);
+	return (x);
 }
