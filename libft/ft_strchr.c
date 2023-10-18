@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:16:15 by aortigos          #+#    #+#             */
-/*   Updated: 2023/09/22 18:48:14 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:15:10 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ char	*ft_strchr(const char *str, int c)
 			return ((char *)&str[i]);
 		}
 		i++;
+	}
+	if ((char)c == '\0')
+	{
+		return ((char *)&str[i]);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 20:56:18 by aortigos          #+#    #+#             */
-/*   Updated: 2023/09/24 15:02:36 by hadi             ###   ########.fr       */
+/*   Updated: 2023/10/08 16:45:43 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <string.h>
 
 // String
 
@@ -26,12 +27,17 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 // Memoria
 void	*ft_memset(void *ptr, int value, size_t num);
 void	*ft_memcpy(void *dst, const void *src, size_t num);
 void	*ft_memmove(void *dst, const void *src, size_t num);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *ptr, size_t num);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 // Caracteres

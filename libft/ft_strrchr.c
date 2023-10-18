@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:34:08 by aortigos          #+#    #+#             */
-/*   Updated: 2023/09/22 18:49:17 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:51:38 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,29 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	const char	*last_ocurrence;
-	size_t		i;
+	char	x;
+	size_t	i;
 
 	i = 0;
+	x = ((char)c);
 	while (str[i] != '\0')
 	{
 		i++;
 	}
 	while (i > 0)
 	{
-		i--;
-		if (str[i] == (char)c)
+		if (str[i] == x)
 		{
-			last_ocurrence = &str[i];
+			return (&((char  *)str)[i]);
+		}
+		i--;
+	}
+	if (i == 0)
+	{
+		if (str[i] == x)
+		{
+			return (&((char *)str)[i]);
 		}
 	}
-	return ((char *)last_ocurrence);
+	return (0);
 }

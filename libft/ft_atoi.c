@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 20:46:43 by aortigos          #+#    #+#             */
-/*   Updated: 2023/09/24 15:04:39 by hadi             ###   ########.fr       */
+/*   Updated: 2023/10/18 20:41:03 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-	while ((str[i] == ' ' || str[i] >= '\t' || str[i] <= '\r')
-		|| (str[i] == '\v' || str[i] == '\r'))
+	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		|| (str[i] == '\v' || str[i] == '\r' || str[i] == '\f'))
 		i++;
 	if (str[i] == '-')
 	{
 		sign = -1;
-		i++;
 	}
-	else if (str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		i++;
 	}
