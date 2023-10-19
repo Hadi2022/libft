@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 21:04:50 by aortigos          #+#    #+#             */
-/*   Updated: 2023/09/27 21:07:19 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:20:40 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	i = ft_strlen(s1);
-	s2 = malloc(i + 1);
+	s2 = (char *)malloc(i + 1);
 	if (!(s2))
 	{
 		return (NULL);

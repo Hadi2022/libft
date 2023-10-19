@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 20:56:18 by aortigos          #+#    #+#             */
-/*   Updated: 2023/10/08 16:45:43 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:00:55 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-
+char	*ft_strtrim(char const *s1, char const *set);
 // Memoria
 void	*ft_memset(void *ptr, int value, size_t num);
 void	*ft_memcpy(void *dst, const void *src, size_t num);

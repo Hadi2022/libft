@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 21:20:19 by aortigos          #+#    #+#             */
-/*   Updated: 2023/10/18 20:24:15 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:16:20 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	j;
 
 	i = 0;
-	if (!src)
+	if (!src || !dest || src == NULL || dest == NULL)
 		return (0);
 	len = ft_strlen(src);
-	if(size == 0)
+	if (size == 0)
 	{
 		return (len);
 	}

@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:15:06 by aortigos          #+#    #+#             */
-/*   Updated: 2023/10/03 19:38:28 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/19 22:01:19 by aortigos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*x;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (!s)
+	j = 0;
+	x = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!s || !x)
 		return (NULL);
-	if (*s == '\0')
-		return (ft_strdup(""));
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	x = (char *)malloc(sizeof(char) * len + 1);
-	if (!(x))
-		return (NULL);
-	while (i < len)
+	while (s[i])
 	{
-		x[i] = s[start + i];
+		if (i >= start && j < len)
+		{
+			x[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	x[i] = '\0';
+	x[j] = '\0';
 	return (x);
 }
