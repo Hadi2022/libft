@@ -6,7 +6,7 @@
 /*   By: aortigos <aortigos@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:50:00 by aortigos          #+#    #+#             */
-/*   Updated: 2023/10/18 20:02:20 by aortigos         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:24:33 by hadi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	re = 0;
-	if (n > 0)
+	if (n == 0)
+		return (0);
+	while (i < n && (s1[i] != '\0' && s1[i] == s2[i]))
 	{
-		while (i < n && (s1[i] != '\0' && s1[i] == s2[i]))
-		{
-			i++;
-		}
+		i++;
 	}
 	if (i == n)
 	{
